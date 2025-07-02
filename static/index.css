@@ -1,0 +1,56 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main Container */
+.container {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+}
+
+/* Heading */
+.container h1 {
+    font-size: 24px;
+    color: #007BFF;
+    margin-bottom: 20px;
+}
+
+/* Paragraphs */
+.container p {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 15px 0 5px;
+    color: #444;
+}
+
+/* Links */
+.container a {
+    text-decoration: none;
+    color: #007BFF;
+    font-size: 16px;
+    margin: 0 5px;
+    transition: color 0.3s ease;
+}
+
+.container a:hover {
+    color: #0056b3;
+}

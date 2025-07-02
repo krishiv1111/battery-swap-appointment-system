@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/myappointments.css">
+    <title>My Appointments</title>
+</head>
+<body>
+    <div class="container">
+    <h2>{{ username }}'s appointments</h2>
+    <table border="1" cellpadding = "10" style="border-collapse: collapse;">
+        <tr>
+            <th>booking No</th>
+            <th>station</th>
+            <th>date</th>
+            <th>time</th>
+            <th>status</th>
+        </tr>
+        {% for a in appointments %}
+        <tr>
+            <td>{{ a.booking_id }}</td>
+            <td>{{ a.station }}</td>
+            <td>{{ a.date }}</td>
+            <td>{{ a.time }}</td>
+            <td>{{ a.status}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br><br>
+    <a href="/dashboard">Back to Dashboard</a>
+    </div>
+</body>
+</html>

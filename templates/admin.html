@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/admin.css">
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <div class="container">
+    <h2>All appointments (Admin Panel)</h2>
+    <table border = "1" cellpadding = "0" style="border-collapse: collapse;">
+        <tr>
+            <th>booking no</th>
+            <th>user id</th>
+            <th>station</th>
+            <th>date</th>
+            <th>time</th>
+            <th>status</th>
+            <th>update status</th>
+        </tr>
+        <tr>
+        {% for a in appointments %}
+        <td>{{ a.booking_id }}</td>
+        <td>{{ a.user_id }}</td>
+        <td>{{ a.station }}</td>
+        <td>{{ a.date }}</td>
+        <td>{{ a.time }}</td>
+        <td>{{ a.status }}</td>
+        <td>
+            <form action="/update_status/{{ a.booking_id }}" method="post">
+                <select name="status">
+                    <option value="booked" {% if a.status == "Booked" %}selected{% endif %}>Booked</option>
+                    <option value="completed" {% if a.status == "Completed" %}selected{% endif %}>Completed</option>
+                    <option value="cancelled" {% if a.status== "Cancelled" %}selected{% endif %}>Cancelled</option>
+                </select>
+                <button type="submit">Update Status</button>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+    </table>
+    <br><br>
+    <p><a href="/">Back to Home Page</a></p>
+    </div>
+
+</body>
+</html>
